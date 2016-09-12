@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal"
+    tools:showIn="@layout/activity_main">
+
+    <TextView
+        android:layout_width="30dp"
+        android:layout_height="match_parent"
+        android:background="#33FFFFFF"/>
+
+    <TextView
+        android:id="@+id/textView_Monday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:textColor="#1B7CDC"
+        android:text="周一"
+        android:background="#33FFFFFF"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Tuesday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周二"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Wednesday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周三"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Thursday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周四"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Friday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周五"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Saturday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周六"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView_Sunday"
+        android:layout_width="0dip"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="周日"
+        android:background="#33FFFFFF"
+        android:textColor="#1B7CDC"
+        android:gravity="center"/>
+</LinearLayout>

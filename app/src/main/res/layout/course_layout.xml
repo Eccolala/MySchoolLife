@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:scrollbars="none"
+    tools:showIn="@layout/activity_main">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="30dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView_getWidth"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="1"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="2"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="3"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="4"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="5"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="6"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="7"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="8"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="9"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="10"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="11"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/table_rowwide"
+                android:text="12"
+                android:background="#33FFFFFF"
+                android:textColor="#1B7CDC"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout1"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1">
+
+            <!--<TextView-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="@dimen/class_rowwide"-->
+                <!--android:text="模式识别\n东区教学楼3-207"-->
+                <!--android:textColor="#ffffff"-->
+                <!--android:textSize="@dimen/txtsize_course"-->
+                <!--android:background="@drawable/ic_course_bg_cyan"/>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout6"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout7"
+            android:layout_width="0dip"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_weight="1"></LinearLayout>
+    </LinearLayout>
+
+</ScrollView>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:paddingLeft="40dp"
+        android:paddingRight="40dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录"
+            android:textSize="38sp"
+            android:textColor="#1B7CDC"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textSize="14sp"
+            android:text="江苏科技大学"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:textColor="#1B7CDC"
+            android:text="学号"/>
+
+        <EditText
+            android:id="@+id/username_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#1B7CDC"
+            android:text="密码"/>
+
+        <EditText
+            android:id="@+id/pwd_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="8dp"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <CheckBox
+                android:id="@+id/checkbox_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/checkbox_id"
+                android:text="记住我"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/loginBtn_id"
+            android:layout_width="150dp"
+            android:layout_height="48dp"
+            android:text="登录"
+            android:textColor="#FFFFFF"
+            android:textSize="16sp"
+            android:background="#1B7CDC"
+            android:layout_marginTop="40dp"
+            android:layout_gravity="center_horizontal"
+            android:onClick="check4login"/>
+
+    </LinearLayout>
+
+</RelativeLayout>

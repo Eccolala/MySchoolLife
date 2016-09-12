@@ -22,8 +22,7 @@
         android:paddingLeft="16dp"
         android:paddingRight="16dp"
         android:textColor="#1B7CDC"
-        android:textSize="@dimen/txtsize_subhead"
-        android:text="成绩"/>
+        android:textSize="@dimen/txtsize_subhead"/>
 
     <TextView
         style="@style/TextViewTitle"
@@ -41,8 +40,7 @@
         android:layout_alignParentRight="true"
         android:layout_centerVertical="true"
         android:padding="8dp"
-        android:onClick="onClickSetting"
-        android:src="@drawable/selecter_settings"/>
+        android:onClick="onClickSetting"/>
 
     <TextView
         android:id="@+id/titlebar_tv_right"
