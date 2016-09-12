@@ -5,7 +5,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -19,11 +18,11 @@ import com.example.eccolala.myschoollife.model.Course;
 import com.example.eccolala.myschoollife.model.User;
 import com.example.eccolala.myschoollife.util.TitleBuilder;
 import io.realm.Realm;
-import io.realm.RealmConfiguration;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
-public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncResponse{
+public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncResponse {
 
     private TitleBuilder tbBuilder;
 
@@ -38,17 +37,16 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
 
     private CrawlAsync async;
 
-    private RealmConfiguration realmConfig;
-
     private Realm realm;
 
     private LinearLayout[] linearLayouts = new LinearLayout[7];
+
+    private ArrayList<Integer> myImageList;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
 
         setContentView(R.layout.activity_main);
 
@@ -59,7 +57,6 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
         // int nh = (int) (d.getHeight() * (512.0 / d.getWidth()));
         //
         // Bitmap scaled = Bitmap.createScaledBitmap(d, 512, nh, true);
-
 
         realm = Realm.getDefaultInstance();
 
@@ -74,10 +71,7 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
 
         intent = this.getIntent();
 
-        user = (User)intent.getSerializableExtra("user");
-
-
-
+        user = (User) intent.getSerializableExtra("user");
 
         async = new CrawlAsync();
 
@@ -85,12 +79,7 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
 
         async.execute(user);
 
-
-
     }
-
-
-
 
 
     private void init() {
@@ -102,12 +91,24 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
         linearLayouts[5] = (LinearLayout) findViewById(R.id.linearLayout6);
         linearLayouts[6] = (LinearLayout) findViewById(R.id.linearLayout7);
 
+        myImageList = new ArrayList<>();
+        myImageList.add(R.drawable.ic_course_bg_bohelv);
+        myImageList.add(R.drawable.ic_course_bg_cyan);
+        myImageList.add(R.drawable.ic_course_bg_cheng);
+        myImageList.add(R.drawable.ic_course_bg_huang);
+        myImageList.add(R.drawable.ic_course_bg_kafei);
+        myImageList.add(R.drawable.ic_course_bg_lan);
+        myImageList.add(R.drawable.ic_course_bg_lv);
+        myImageList.add(R.drawable.ic_course_bg_molan);
+        myImageList.add(R.drawable.ic_course_bg_qing);
+        myImageList.add(R.drawable.ic_course_bg_tao);
+        myImageList.add(R.drawable.ic_course_bg_zi);
+
     }
 
 
     /**
      * 选择星期
-     * @param v
      */
     public void weekSelect(View v) {
         View view = View.inflate(this, R.layout.changweek_layout, null);
@@ -146,34 +147,17 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
                 pop.dismiss();
                 // drawNowWeek();
                 // drawAllCourse();
-                tbBuilder.setTitleText("第"+mNowWeek+"周");
+                tbBuilder.setTitleText("第" + mNowWeek + "周");
 
-                addCourses("呵呵打");
+                // addCourses("呵呵打");
             }
         });
 
     }
 
 
-    private void addCourses(String s) {
-        for (int i=0;i<linearLayouts.length;i++){
-            TextView textView = new TextView(getApplicationContext());
-            textView.setText(s);
-            textView.setTextColor(Color.WHITE);
-            textView.setBackgroundResource(R.drawable.ic_course_bg_cyan);
-            textView.setTextSize(16);
-            textView.setLayoutParams(new LinearLayout.LayoutParams(LinearLayout.LayoutParams.MATCH_PARENT,
-                280));
-
-            linearLayouts[i].addView(textView);
-        }
-
-    }
-
-
     /**
      * 设置界面
-     * @param v
      */
     public void onClickSetting(View v) {
         // for (int i=0;i<linearLayouts.length;i++){
@@ -183,22 +167,74 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
     }
 
 
+    private void createCourses(int[] counts, int j, int k, String msg) {
+        Random ran = new Random();
+        int x = ran.nextInt(11);
+
+        TextView
+            textView = new TextView(getApplicationContext());
+        textView.setText(msg);
+        textView.setTextColor(Color.WHITE);
+        textView.setBackgroundResource(
+            myImageList.get(x));
+        textView.setTextSize(12);
+
+        LinearLayout.LayoutParams params
+            = new LinearLayout.LayoutParams(
+            LinearLayout.LayoutParams.MATCH_PARENT, 280);
+        params.setMargins(0, (k - counts[j]) * 280, 0,
+            0); //left,top,right, bottom
+        textView.setLayoutParams(params);
+        linearLayouts[j].addView(textView);
+        counts[j] = k + 1;
+    }
 
 
+    @Override public void processFinish(final List<Course> courses) {
 
+        realm.executeTransaction(
+            new Realm.Transaction() {
+                @Override public void execute(Realm realm) {
+                    int[] counts = new int[7];
 
-    @Override public void processFinish(List<Course> courses) {
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override public void execute(Realm realm) {
+                    // for (int i = 0; i < linearLayouts.length; i++) {
+                    //     for (Course course : realm.where(Course.class).findAll()){
+                    //         if (course.posX == i){
+                    //
+                    //             String msg = course.className + "\n" + "\n" + course.classAddr;
+                    //
+                    //             int posX = course.posX;
+                    //
+                    //             int posY = course.posY - 1;
+                    //
+                    //
+                    //             addCourses(msg,posX,posY);
+                    //         }
+                    //     }
+                    //
+                    // }
 
-                for (Course s : realm.where(Course.class).findAll()) {
-                    String className = s.className;
-                    Log.d("TAG", String.valueOf(className));
+                    for (Course course : realm.where(Course.class).findAll()) {
+                        for (int j = 0; j < 7; j++) {
+                            if (course.posX == j) {
+                                for (int k = 0; k < 5; k++) {
+                                    if (course.posY - 1 == k) {
+                                        String msg = course.className + "\n" + "\n" +
+                                            course.classAddr;
 
-                    addCourses(className);
+                                        createCourses(counts, j, k, msg);
+
+                                    }
+                                }
+                            }
+                        }
+                    }
+
                 }
+
             }
-        });
+
+        );
     }
 
 
