@@ -73,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements CrawlAsync.AsyncR
 
         user = (User) intent.getSerializableExtra("user");
 
+
+
         async = new CrawlAsync();
 
         async.delegate = this;
